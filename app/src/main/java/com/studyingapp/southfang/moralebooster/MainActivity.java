@@ -1,5 +1,6 @@
 package com.studyingapp.southfang.moralebooster;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.studyingapp.southfang.moralebooster.database.ReaderContract;
 import com.studyingapp.southfang.moralebooster.fragments.MessageFragment;
 import com.studyingapp.southfang.moralebooster.fragments.tab1;
 import com.studyingapp.southfang.moralebooster.fragments.tab3;
@@ -85,7 +87,14 @@ public class MainActivity extends AppCompatActivity implements MessageFragment.O
 
     @Override
     public void onListFragmentInteraction(MessageItem item) {
+	    Intent intent = new Intent(this, DetailActivity.class);
 
+	    intent.putExtra(ReaderContract.FeedEntry.COLUMN_DATE, item.getFecha());
+	    intent.putExtra(ReaderContract.FeedEntry.COLUMN_TYPE, item.getTipoMensaje());
+	    intent.putExtra(ReaderContract.FeedEntry.COLUMN_CONTENT, item.getContenido());
+	    intent.putExtra(ReaderContract.FeedEntry.COLUMN_IMAGE, item.getImagen());
+
+	    startActivity(intent);
     }
 
     /**

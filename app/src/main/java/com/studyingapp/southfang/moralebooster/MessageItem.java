@@ -45,8 +45,8 @@ public class MessageItem {
 				case "MEDIJERON":return MEDIJERON;
 				case "Lo pienso de mi":return LOPIENSO;
 				case "LOPIENSO":return LOPIENSO;
+				default: return LOPIENSO;
 			}
-			return null;
 		}
 	}
 }
