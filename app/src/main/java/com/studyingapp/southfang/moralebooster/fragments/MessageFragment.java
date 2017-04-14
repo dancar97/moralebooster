@@ -78,7 +78,7 @@ public class MessageFragment extends Fragment {
 	}
 
 	public void refreshItems(){
-		ITEMS.clear();git
+		ITEMS.clear();
 		SQLiteDatabase db = (new DatabaseHelper(getContext())).getReadableDatabase();
 		Cursor c = db.query(FeedEntry.TABLE_NAME,
 				FeedEntry.ALL_COLUMNS, null, null, null, null, null);
