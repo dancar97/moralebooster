@@ -25,8 +25,6 @@ public class tab1 extends Fragment {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-
                 Intent myIntent = new Intent(v.getContext(), writing_panel11.class);
                 startActivityForResult(myIntent, 0);
             }

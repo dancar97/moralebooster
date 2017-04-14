@@ -58,7 +58,7 @@ public class writing_panel11 extends Activity {
 			                               public void onClick(View v) {
 				                               SQLiteDatabase db = (new DatabaseHelper(getBaseContext())).getWritableDatabase();
 				                               ContentValues values = new ContentValues();
-				                               CharSequence s  = DateFormat.format("d/MM/yy", new Date().getTime());
+				                               CharSequence s  = DateFormat.format("d/MM/yy", new Date().getTime() + 1);
 
 				                               values.put(FeedEntry.COLUMN_DATE,s.toString());
 				                               values.put(FeedEntry.COLUMN_CONTENT, texts.getText().toString());

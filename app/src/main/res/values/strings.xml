@@ -4,6 +4,10 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="imagen_descriptiva">Imagen descriptiva</string>
     <string name="continue_message">Sigue así!</string>
+    <string name="title_inicio">Inicio</string>
+    <string name="title_historia">Historia</string>
+    <string name="tite_grafica">Gráfica</string>
+    <string name="text_count">Número de cosas bonitas que me han dicho:</string>
 
 
     <string-array name="spinnerItems">
