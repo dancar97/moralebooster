@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MORALE BOOSTER</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="imagen_descriptiva">Imagen descriptiva</string>
+
+
+    <string-array name="spinnerItems">
+        <item>Estoy conforme</item>
+        <item>Estoy feliz</item>
+        <item>Tengo curiosidad</item>
+    </string-array>
+
+
+
+    <string-array name="spinnerItems2">
+        <item>Estoy orgulloso de mi</item>
+        <item>Me lo dijo alguien</item>
+        <item>Lo pienso de mi</item>
+    </string-array>
+
+</resources>
