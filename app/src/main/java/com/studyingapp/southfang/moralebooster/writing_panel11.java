@@ -27,7 +27,7 @@ public class writing_panel11 extends Activity {
 	public Spinner spinner;
 	public ImageView Image;
 	public EditText texts;
-
+	private InterstitialAd interstitial;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
@@ -40,7 +40,16 @@ public class writing_panel11 extends Activity {
 		texts = (EditText) findViewById(R.id.editText);
 		final Spinner spnLocale = (Spinner) findViewById(R.id.spinner);
 		spinner = (Spinner) findViewById(R.id.spinner2);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		interstitial = new InterstitialAd(writing_panel11.this);
+		interstitial.setAdUnitId("ca-app-pub-8584889475357390/6729355661");
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			public void onAdLoaded() {
 
+
+			}
+		});
 		spnLocale.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 				Image.setImageResource(getImageId(spnLocale.getSelectedItem().toString()));
@@ -56,6 +65,7 @@ public class writing_panel11 extends Activity {
 
 			                               @Override
 			                               public void onClick(View v) {
+							        displayIn();
 				                               SQLiteDatabase db = (new DatabaseHelper(getBaseContext())).getWritableDatabase();
 				                               ContentValues values = new ContentValues();
 				                               CharSequence s  = DateFormat.format("d/MM/yy", new Date().getTime() + 1);
@@ -96,5 +106,13 @@ public class writing_panel11 extends Activity {
 		}
 
 		return 0;
+	}
+
+	public void displayIn() {
+
+		if (interstitial.isLoaded()) {
+			interstitial.show();
+			System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		}
 	}
 }
